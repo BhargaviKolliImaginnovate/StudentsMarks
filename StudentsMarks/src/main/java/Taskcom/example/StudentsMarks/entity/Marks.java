@@ -14,28 +14,33 @@ public class Marks {
     @Id
     @Column(name="id")
     private  int id;
-    @Column
-    private int student_id;
 
     @Column
-    private String telugu;
+    private String student_fname;
+
+
     @Column
-    private String hindi;
+    private String student_lname;
     @Column
-    private String english;
+    private int telugu;
     @Column
-    private String maths;
+    private int hindi;
     @Column
-    private String science;
+    private int english;
     @Column
-    private String social;
+    private int maths;
+    @Column
+    private int science;
+    @Column
+    private int social;
 
 
     @Override
     public String toString() {
         return "Marks{" +
                 "id=" + id +
-                ", student_id=" + student_id +
+                ", student_fname='" + student_fname + '\'' +
+                ", student_lname='" + student_lname + '\'' +
                 ", telugu='" + telugu + '\'' +
                 ", hindi='" + hindi + '\'' +
                 ", english='" + english + '\'' +
@@ -50,68 +55,76 @@ public class Marks {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Marks marks = (Marks) o;
-        return id == marks.id && student_id == marks.student_id && Objects.equals(telugu, marks.telugu) && Objects.equals(hindi, marks.hindi) && Objects.equals(english, marks.english) && Objects.equals(maths, marks.maths) && Objects.equals(science, marks.science) && Objects.equals(social, marks.social);
+        return id == marks.id && Objects.equals(student_fname, marks.student_fname) && Objects.equals(student_lname, marks.student_lname) && Objects.equals(telugu, marks.telugu) && Objects.equals(hindi, marks.hindi) && Objects.equals(english, marks.english) && Objects.equals(maths, marks.maths) && Objects.equals(science, marks.science) && Objects.equals(social, marks.social);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, student_id, telugu, hindi, english, maths, science, social);
+        return Objects.hash(id, student_fname, student_lname, telugu, hindi, english, maths, science, social);
     }
 
-    public String getSocial() {
+    public int getSocial() {
         return social;
     }
 
-    public void setSocial(String social) {
+    public void setSocial(int social) {
         this.social = social;
     }
 
-    public String getScience() {
+    public int getScience() {
         return science;
     }
 
-    public void setScience(String science) {
+    public void setScience(int science) {
         this.science = science;
     }
 
-    public String getMaths() {
+    public int getMaths() {
         return maths;
     }
 
-    public void setMaths(String maths) {
+    public void setMaths(int maths) {
         this.maths = maths;
     }
 
-    public String getEnglish() {
+    public int getEnglish() {
         return english;
     }
 
-    public void setEnglish(String english) {
+    public void setEnglish(int english) {
         this.english = english;
     }
 
-    public String getHindi() {
+    public int getHindi() {
         return hindi;
     }
 
-    public void setHindi(String hindi) {
+    public void setHindi(int hindi) {
         this.hindi = hindi;
     }
 
-    public String getTelugu() {
+    public int getTelugu() {
         return telugu;
     }
 
-    public void setTelugu(String telugu) {
+    public void setTelugu(int telugu) {
         this.telugu = telugu;
     }
 
-    public int getStudent_id() {
-        return student_id;
+    public String getStudent_lname() {
+        return student_lname;
     }
 
-    public void setStudent_id(int student_id) {
-        this.student_id = student_id;
+    public void setStudent_lname(String student_lname) {
+        this.student_lname = student_lname;
+    }
+
+    public String getStudent_fname() {
+        return student_fname;
+    }
+
+    public void setStudent_fname(String student_fname) {
+        this.student_fname = student_fname;
     }
 
     public int getId() {
